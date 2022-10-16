@@ -1,5 +1,5 @@
-import React from 'react'
 import { Button, StyleSheet, Text, View } from 'react-native';
+import React from 'react';
 import { Camera, CameraType } from 'expo-camera';
 const CameraScreen = ( {navigation} ) => {
 
@@ -7,7 +7,7 @@ const CameraScreen = ( {navigation} ) => {
 
   if (!permission) {
     // Camera permissions are still loading
-    return navigation.navigate('Home');
+    return <View />;
   }
 
   if (!permission.granted) {
