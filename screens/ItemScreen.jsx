@@ -1,7 +1,7 @@
 import { Button, View, Text } from 'react-native'
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCart } from '../redux/slices/cartSlice';
+import { addToCart, clearCart, decreaseCart, removeFromCart } from '../redux/slices/cartSlice';
 
 const ItemScreen = ( {navigation, route} ) => {
   const dispatch = useDispatch();
@@ -12,14 +12,9 @@ const ItemScreen = ( {navigation, route} ) => {
     return p.barcode == currentCode;
   });
 
-
   const handleAddToCart = (product) => {
-    dispatch(addToCart(cartState, currentProductInfo));
+    dispatch(addToCart(currentProductInfo));
   };
-
-  useEffect(() => {
-    console.log(cartState);
-  }, [cartState]);
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
