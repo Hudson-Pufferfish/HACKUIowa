@@ -13,7 +13,8 @@ export const fetchProductInfo = createAsyncThunk(
                 'X-RapidAPI-Key': '08bf2e1c4dmsh126b43cd7e37d06p103adfjsn2749397e5fd1',
                 'X-RapidAPI-Host': 'barcode-lookup.p.rapidapi.com'
             }
-        }).then((data) => {
+        }).then((res) => {
+            const data = res.data.products[0];
             return {
                 id: uuid.v4(),
                 image: data.images,
