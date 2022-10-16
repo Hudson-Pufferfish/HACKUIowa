@@ -1,5 +1,5 @@
-import { ImageBackground, Button, View, Text, TouchableOpacity, Image } from 'react-native';
-import { Card, ListItem, Button, Icon } from 'react-native-elements'
+import { ImageBackground, View, Text, TouchableOpacity, Image } from 'react-native';
+import { Card } from 'react-native-elements'
 import React from 'react';
 import { buttonStyles } from '../styles/button.styles';
 import { productStyles } from '../styles/product.styles';

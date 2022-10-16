@@ -26,7 +26,10 @@ const ItemScreen = ( {navigation, route} ) => {
   return (
     <View style={buttonStyles.screenContainer}>
     <ImageBackground source={require("../assets/images/treeBg.jpg")} style={buttonStyles.image}>
-      <AppButton title="Add to Cart" size="sm" backgroundColor="#007bff" onPress={() => handleAddToCart(currentProductInfo)}/>
+        <AppButton title="Add to Cart" size="sm" backgroundColor="#007bff" onPress={() => {
+          handleAddToCart(currentProductInfo);
+          navigation.goBack();
+        }} />
     </ImageBackground>
   </View>
   )
