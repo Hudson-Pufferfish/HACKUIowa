@@ -21,7 +21,9 @@ const CameraScreen = ( {navigation} ) => {
   const handleBarCodeScanned = ({ type, data }) => {
     setScanned(true);
     alert(`Bar code with type ${type} and data ${data} has been scanned!`);
-    dispatch(fetchProductInfo(data));
+    dispatch(fetchProductInfo(data)).then(()=> {
+      navigate('Item');
+    });
   };
 
   if (hasPermission === null) {
