@@ -49,20 +49,11 @@ We've read tons of documents for this project. So, we would that we learned a lo
 We desire to make a humongous impact on human's awareness and manufacturer brands. Why did we mention manyfacturer brands? We want to work with them to label the amount of carbon print on the their products in addtion to calories or nutritions.
 
 ## Demo
-<!-- ![CarbonScanner](https://user-images.githubusercontent.com/96578906/196050864-cd419753-b595-4155-a459-10732094e96a.jpg)
 
-![CarbonScanner](https://user-images.githubusercontent.com/96578906/196051068-d6c17381-497f-4506-9637-d2a99bb68d69.jpg) -->
 
-<div align=center>
-<span>
-<img src="https://user-images.githubusercontent.com/96578906/196050864-cd419753-b595-4155-a459-10732094e96a.jpg" width="90px" height="160px" alt="Home page">
-</span>
-
-<br>
-<span>
-<img src="https://user-images.githubusercontent.com/96578906/196051068-d6c17381-497f-4506-9637-d2a99bb68d69.jpg" width="90px" height="160px" alt="Carbon Calc">
-</span>
-</div>
+CarbonScanner's Homepage             |  Carbon Compensation Calculation 
+:-------------------------:|:-------------------------:
+![Home](https://user-images.githubusercontent.com/96578906/196050864-cd419753-b595-4155-a459-10732094e96a.jpg)  |  ![C calc](https://user-images.githubusercontent.com/96578906/196051068-d6c17381-497f-4506-9637-d2a99bb68d69.jpg)
 
 ## Contributors
 
