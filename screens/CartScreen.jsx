@@ -4,15 +4,12 @@ import React from 'react';
 import { buttonStyles } from '../styles/button.styles';
 import { productStyles } from '../styles/product.styles';
 
-
 const CartScreen = ({ navigation }) => {
   return (
     <View style={buttonStyles.screenContainer}>
       <ImageBackground source={require("../assets/images/treeBg.jpg")} style={buttonStyles.image}>
         <Card>
-        
           {products.map((item) => {
-                 
             <View key={item.id} style={productStyles.container}>
               <Image
                 style={productStyles.image}
