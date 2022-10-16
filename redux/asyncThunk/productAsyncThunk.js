@@ -10,7 +10,7 @@ export const fetchProductInfo = createAsyncThunk(
             url: 'https://barcode-lookup.p.rapidapi.com/v3/products',
             params: {barcode: productBarCode},
             headers: {
-                'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
+                'X-RapidAPI-Key': '08bf2e1c4dmsh126b43cd7e37d06p103adfjsn2749397e5fd1',
                 'X-RapidAPI-Host': 'barcode-lookup.p.rapidapi.com'
             }
         }).then((data) => {
@@ -23,7 +23,7 @@ export const fetchProductInfo = createAsyncThunk(
                 carbon: carbonCalculator(data.category), 
             };
         }).catch((error) => {
-            console.log(error);
+            alert(error);
         })
     }
 )
