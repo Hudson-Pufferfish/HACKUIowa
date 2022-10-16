@@ -21,6 +21,8 @@ export const fetchProductInfo = createAsyncThunk(
                 carbon: carbonCalculator(data.category), 
             },
             return info;
+        }).catch((error) => {
+            console.log(error);
         })
     }
 )
