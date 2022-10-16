@@ -12,6 +12,7 @@ import { BUTTON_COLOR } from '../constants/color.constants.js';
 
 const HomeStack = createNativeStackNavigator();
 const CartStack = createNativeStackNavigator();
+const ActionStack = createNativeStackNavigator();
 const BottomTabBar = createBottomTabNavigator();
 
 function HomeStackScreen () {
@@ -30,6 +31,14 @@ function CartStackScreen () {
             <CartStack.Screen name="Cart" component={CartScreen} />
             <CartStack.Screen name="Item" component={ItemScreen} />
         </CartStack.Navigator>
+    );  
+}
+
+function ActionStackScreen () {
+    return (
+        <ActionStack.Navigator>
+            <ActionStack.Screen name="Action" component={ActionScreen} />
+        </ActionStack.Navigator>
     );  
 }
 
@@ -60,7 +69,7 @@ const AppNavigation = () => {
         />
         <BottomTabBar.Screen 
             name="ActionTab" 
-            component={ActionScreen} 
+            component={ActionStackScreen} 
             options={{
                     tabBarLabel: "Action",
                     tabBarIcon: ({ color, size }) => (
