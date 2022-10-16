@@ -5,6 +5,7 @@ import { buttonStyles } from '../styles/button.styles';
 import { productStyles } from '../styles/product.styles';
 import { useDispatch, useSelector } from 'react-redux';
 
+
 const CartScreen = ({ navigation }) => {
   const currentItems = useSelector(state => state.cart).cartItems;
   return (
