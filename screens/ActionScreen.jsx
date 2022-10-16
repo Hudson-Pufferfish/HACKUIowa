@@ -14,7 +14,7 @@ const ActionScreen = ( {navigation} ) => {
   return (
     <View style={buttonStyles.screenContainer}>
       <ImageBackground source={require("../assets/images/treeBg.jpg")} style={buttonStyles.image}>
-        <AppButton title="Action Screen" size="sm" backgroundColor="#007bff" />
+        <AppButton title="Calculate Carbon Offset" size="sm" backgroundColor="#007bff" />
       </ImageBackground>
   </View>
   )

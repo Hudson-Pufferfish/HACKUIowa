@@ -46,7 +46,7 @@ function ActionStackScreen () {
 
 const AppNavigation = () => {
     return (
-      <BottomTabBar.Navigator initialRouteName="Home" screenOptions={{ headerShown: false, tabBarActiveTintColor: BUTTON_COLOR, tabBarInactiveBackgroundColor : TABBAR_BACKGROUND_COLOR , tabBarInactiveTintColor : TABBAR_TEXT_COLOR}}>
+      <BottomTabBar.Navigator initialRouteName="Home" screenOptions={{ headerShown: false, tabBarActiveBackgroundColor: '#2F2F2F', tabBarActiveTintColor: BUTTON_COLOR, tabBarInactiveBackgroundColor : TABBAR_BACKGROUND_COLOR , tabBarInactiveTintColor : TABBAR_TEXT_COLOR}}>
         
         <BottomTabBar.Screen 
             name="HomeTab" 

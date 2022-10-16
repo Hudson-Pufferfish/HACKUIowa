@@ -22,7 +22,9 @@ export const buttonStyles = StyleSheet.create({
     color: "#fff",
     fontWeight: "bold",
     alignSelf: "center",
-    textTransform: "uppercase"
+    textTransform: "uppercase",
+    textAlign : "center",
+    lineHeight : 25
   },
   image: {
     flex: 1,
