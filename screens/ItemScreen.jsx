@@ -14,7 +14,7 @@ const ItemScreen = ( {navigation} ) => {
   return (
     <View style={buttonStyles.screenContainer}>
     <ImageBackground source={require("../assets/images/treeBg.jpg")} style={buttonStyles.image}>
-      <AppButton title="Add to Cart" size="sm" backgroundColor="#007bff" onPress={() => navigation.navigate('Cart')}/>
+      <AppButton title="Add to Cart" size="sm" backgroundColor="#007bff" onPress={() => navigation.navigate('Item')}/>
     </ImageBackground>
   </View>
   )
