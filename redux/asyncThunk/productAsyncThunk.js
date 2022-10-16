@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
+import uuid from 'react-native-uuid';
 
 export const fetchProductInfo = createAsyncThunk(
     'product/fetchByBarCode',
@@ -14,6 +15,7 @@ export const fetchProductInfo = createAsyncThunk(
             }
         }).then((data) => {
             return {
+                id: uuid.v4(),
                 image: data.images,
                 barcode: data.barcode_number,
                 name: data.title,
