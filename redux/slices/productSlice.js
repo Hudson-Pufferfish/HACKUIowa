@@ -7,9 +7,14 @@ const product = createSlice({
     initialState: [],
     reducers: {},
     extraReducers: (builder) => {
-        // builder.addCase(fetchProductInfo.rejected, (action) => {})
         builder.addCase(fetchProductInfo.fulfilled, (state, action) => {
-            state.push(action.payload);
+            if (action.payload) {
+                state.push(action.payload);
+            }
+        })
+        builder.addCase(fetchProductInfo.rejected, (state, action) => {
+            alert("Product unavailable.");
+            return state;
         })
     },
 })

@@ -4,16 +4,17 @@ import uuid from 'react-native-uuid';
 
 export const fetchProductInfo = createAsyncThunk(
     'product/fetchByBarCode',
-    async (productBarCode) => {
-        axios({
+    async (productBarCode, thunkAPIs) => {
+        await axios({
             method: 'GET',
             url: 'https://barcode-lookup.p.rapidapi.com/v3/products',
             params: {barcode: productBarCode},
             headers: {
-                'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
+                'X-RapidAPI-Key': '48ffbb5cb5mshe7d78491933dec9p1b0bc7jsn85439d123583',
                 'X-RapidAPI-Host': 'barcode-lookup.p.rapidapi.com'
             }
-        }).then((data) => {
+        }).then((res) => {
+            const data = res.data.products[0];
             return {
                 id: uuid.v4(),
                 image: data.images,
@@ -22,9 +23,7 @@ export const fetchProductInfo = createAsyncThunk(
                 category: data.category,
                 carbon: carbonCalculator(data.category), 
             };
-        }).catch((error) => {
-            console.log(error);
-        })
+        });
     }
 )
 
