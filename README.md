@@ -6,14 +6,14 @@ This project was bootstrapped with [Create Expo App](https://github.com/expo/exp
 
 In the project directory, you can run:
 
-### `npm install`
+#### `npm install`
 
 Then:
 
-### `npm install expo-cli --global`
+#### `npm install expo-cli --global`
 
 Finally, to run the application:
-### `npx expo start`
+#### `npx expo start`
 
 
 ## Inspiration
