@@ -12,10 +12,6 @@ const AppButton = ({ onPress, title }) => (
 
 const ItemScreen = ( {navigation} ) => {
   return (
-    // <View style={buttonStyles.screenContainer}>
-    //   <Button title="Add to Cart" onPress={() => navigation.navigate('Cart')} />
-    // </View>
-    
     <View style={buttonStyles.screenContainer}>
     <ImageBackground source={require("../assets/images/treeBg.jpg")} style={buttonStyles.image}>
       <AppButton title="Add to Cart" size="sm" backgroundColor="#007bff" onPress={() => navigation.navigate('Cart')}/>
