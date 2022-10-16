@@ -55,12 +55,12 @@ We desire to make a humongous impact on human's awareness and manufacturer brand
 
 <div align=center>
 <span>
-<img src="https://user-images.githubusercontent.com/96578906/196050864-cd419753-b595-4155-a459-10732094e96a.jpg" width="64px" height="64px" alt="Home page">
+<img src="https://user-images.githubusercontent.com/96578906/196050864-cd419753-b595-4155-a459-10732094e96a.jpg" width="90px" height="160px" alt="Home page">
 </span>
 
 <br>
 <span>
-<img src="https://user-images.githubusercontent.com/96578906/196051068-d6c17381-497f-4506-9637-d2a99bb68d69.jpg" width="64px" height="64px" alt="Carbon Calc">
+<img src="https://user-images.githubusercontent.com/96578906/196051068-d6c17381-497f-4506-9637-d2a99bb68d69.jpg" width="90px" height="160px" alt="Carbon Calc">
 </span>
 </div>
 
