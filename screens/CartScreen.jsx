@@ -3,16 +3,15 @@ import { Card, ListItem, Button, Icon } from 'react-native-elements'
 import React from 'react';
 import { buttonStyles } from '../styles/button.styles';
 import { productStyles } from '../styles/product.styles';
-
+import { useDispatch, useSelector } from 'react-redux';
 
 const CartScreen = ({ navigation }) => {
+  const currentItems = useSelector(state => state.cart).cartItems;
   return (
     <View style={buttonStyles.screenContainer}>
       <ImageBackground source={require("../assets/images/treeBg.jpg")} style={buttonStyles.image}>
         <Card>
-        
-          {products.map((item) => {
-                 
+          {currentItems.map((item) => {
             <View key={item.id} style={productStyles.container}>
               <Image
                 style={productStyles.image}
