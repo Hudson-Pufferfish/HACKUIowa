@@ -1,23 +1,29 @@
-import { ImageBackground, Button, View, Text, TouchableOpacity } from 'react-native';
+import { ImageBackground, Button, View, Text, TouchableOpacity, Image } from 'react-native';
+import { Card, ListItem, Button, Icon } from 'react-native-elements'
 import React from 'react';
 import { buttonStyles } from '../styles/button.styles';
+import { productStyles } from '../styles/product.styles';
 
-TouchableOpacity.defaultProps = { activeOpacity: 0.8 };
-
-const AppButton = ({ onPress, title }) => (
-  <TouchableOpacity onPress={onPress} style={buttonStyles.appButtonContainer}>
-    <Text style={buttonStyles.appButtonText}>{title}</Text>
-  </TouchableOpacity>
-);
 
 const CartScreen = ({ navigation }) => {
   return (
     <View style={buttonStyles.screenContainer}>
       <ImageBackground source={require("../assets/images/treeBg.jpg")} style={buttonStyles.image}>
-        <AppButton title="Item 1" size="sm" backgroundColor="#007bff"/>
-        <AppButton title="Item 2" size="sm" backgroundColor="#007bff"/>
-        <AppButton title="Item 3" size="sm" backgroundColor="#007bff"/>
-        <AppButton title="Item 4" size="sm" backgroundColor="#007bff"/>
+        <Card>
+        
+          {products.map((item) => {
+                 
+            <View key={item.id} style={productStyles.container}>
+              <Image
+                style={productStyles.image}
+                resizeMode="cover"
+                source={{ uri: item.image }}
+              />
+              <Text style={productStyles.name}>{item.name}</Text>
+              <Text style={productStyles.carbon}>{item.carbon}</Text>
+            </View>
+          })}
+       </Card>
       </ImageBackground>
     </View>
    )
