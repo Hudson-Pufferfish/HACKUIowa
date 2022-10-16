@@ -47,3 +47,12 @@ We've read tons of documents for this project. So, we would that we learned a lo
 ## What's next for CarbonScanner
 
 We desire to make a humongous impact on human's awareness and manufacturer brands. Why did we mention manyfacturer brands? We want to work with them to label the amount of carbon print on the their products in addtion to calories or nutritions.
+
+## Demo
+![CarbonScanner](https://user-images.githubusercontent.com/96578906/196050864-cd419753-b595-4155-a459-10732094e96a.jpg)
+
+## Contributors
+
+Hudson Nguyen - Luther College
+Huy Truong - University of Kansas
+Huyen Nguyen - University of Kansas
