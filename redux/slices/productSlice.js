@@ -1,11 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { fetchProductInfo } from '../asyncThunk/productAsyncThunk'
 
-const product = createSlice({
+
+export const product = createSlice({
     name: 'product',
     initialState: [],
-    reducers: {
-        getProduct(state, action) {
-            state.push(action.payload)
-        }
-    }
+    reducers: {},
+    extraReducers: (builder) => {
+        // builder.addCase(fetchProductInfo.rejected, (action) => {})
+        builder.addCase(fetchProductInfo.fulfilled, (state, action) => {
+            state.push(action.payload);
+        })
+    },
 })

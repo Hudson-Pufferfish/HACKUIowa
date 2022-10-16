@@ -13,14 +13,13 @@ export const fetchProductInfo = createAsyncThunk(
                 'X-RapidAPI-Host': 'barcode-lookup.p.rapidapi.com'
             }
         }).then((data) => {
-            const info = {
+            return {
                 image: data.images,
                 barcode: data.barcode_number,
                 name: data.title,
                 category: data.category,
                 carbon: carbonCalculator(data.category), 
-            },
-            return info;
+            };
         }).catch((error) => {
             console.log(error);
         })
