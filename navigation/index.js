@@ -8,6 +8,7 @@ import {
     CartScreen,
     ActionScreen,
 } from '../screens';
+import { BUTTON_COLOR } from '../constants/color.constants.js';
 
 const HomeStack = createNativeStackNavigator();
 const CartStack = createNativeStackNavigator();
@@ -36,7 +37,7 @@ function CartStackScreen () {
 
 const AppNavigation = () => {
     return (
-      <BottomTabBar.Navigator initialRouteName="Home" screenOptions={{ headerShown: false, tabBarActiveTintColor: '#31A05E' }}>
+      <BottomTabBar.Navigator initialRouteName="Home" screenOptions={{ headerShown: false, tabBarActiveTintColor: BUTTON_COLOR }}>
         <BottomTabBar.Screen 
             name="HomeTab" 
             component={HomeStackScreen} 
