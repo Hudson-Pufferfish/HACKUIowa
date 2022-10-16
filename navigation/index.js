@@ -8,7 +8,7 @@ import {
     CartScreen,
     ActionScreen,
 } from '../screens';
-import { BUTTON_COLOR } from '../constants/color.constants.js';
+import { BUTTON_COLOR, TABBAR_BACKGROUND_COLOR, TABBAR_TEXT_COLOR } from '../constants/color.constants.js';
 
 const HomeStack = createNativeStackNavigator();
 const CartStack = createNativeStackNavigator();
@@ -17,7 +17,7 @@ const BottomTabBar = createBottomTabNavigator();
 
 function HomeStackScreen () {
     return (
-        <HomeStack.Navigator>
+        <HomeStack.Navigator screenOptions ={{ headerStyle : { backgroundColor : TABBAR_BACKGROUND_COLOR }, headerTitleStyle : { color : TABBAR_TEXT_COLOR }}} >
             <HomeStack.Screen name="Home" component={HomeScreen} />
             <HomeStack.Screen name="Camera" component={CameraScreen} />
             <HomeStack.Screen name="Item" component={ItemScreen} />
@@ -27,7 +27,7 @@ function HomeStackScreen () {
 
 function CartStackScreen () {
     return (
-        <CartStack.Navigator>
+        <CartStack.Navigator screenOptions ={{ headerStyle : { backgroundColor : TABBAR_BACKGROUND_COLOR }, headerTitleStyle : { color : TABBAR_TEXT_COLOR }}} >
             <CartStack.Screen name="Cart" component={CartScreen} />
             <CartStack.Screen name="Item" component={ItemScreen} />
         </CartStack.Navigator>
@@ -36,7 +36,7 @@ function CartStackScreen () {
 
 function ActionStackScreen () {
     return (
-        <ActionStack.Navigator>
+        <ActionStack.Navigator screenOptions ={{ headerStyle : { backgroundColor : TABBAR_BACKGROUND_COLOR }, headerTitleStyle : { color : TABBAR_TEXT_COLOR }}} >
             <ActionStack.Screen name="Action" component={ActionScreen} />
         </ActionStack.Navigator>
     );  
@@ -46,7 +46,8 @@ function ActionStackScreen () {
 
 const AppNavigation = () => {
     return (
-      <BottomTabBar.Navigator initialRouteName="Home" screenOptions={{ headerShown: false, tabBarActiveTintColor: BUTTON_COLOR }}>
+      <BottomTabBar.Navigator initialRouteName="Home" screenOptions={{ headerShown: false, tabBarActiveTintColor: BUTTON_COLOR, tabBarInactiveBackgroundColor : TABBAR_BACKGROUND_COLOR , tabBarInactiveTintColor : TABBAR_TEXT_COLOR}}>
+        
         <BottomTabBar.Screen 
             name="HomeTab" 
             component={HomeStackScreen} 
