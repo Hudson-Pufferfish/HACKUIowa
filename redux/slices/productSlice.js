@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 import { fetchProductInfo } from '../asyncThunk/productAsyncThunk'
 
 
-export const product = createSlice({
+const product = createSlice({
     name: 'product',
     initialState: [],
     reducers: {},
@@ -13,3 +13,5 @@ export const product = createSlice({
         })
     },
 })
+
+export default product.reducer;
