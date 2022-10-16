@@ -12,7 +12,7 @@ const AppButton = ({ onPress, title }) => (
 
 const ActionScreen = ( {navigation} ) => {
   const { cartTotalAmount: totalCarbon } = useSelector(state => state.cart);
-  const calculateCarbon = parseInt(totalCarbon || 0) / 181437;
+  const calculateCarbon = parseInt(totalCarbon || 0) / 1814;
   return (
     <View style={buttonStyles.screenContainer}>
       <ImageBackground source={require("../assets/images/treeBg.jpg")} style={buttonStyles.image}>
