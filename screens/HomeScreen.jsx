@@ -1,4 +1,4 @@
-import { Button, View, Text, TouchableOpacity } from 'react-native'
+import { ImageBackground, Button, View, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { buttonStyles } from '../styles/button.styles';
 
@@ -12,8 +12,10 @@ const AppButton = ({ onPress, title }) => (
 
 const HomeScreen = ({ navigation }) => {
  return (
-    <View style= {buttonStyles.screenContainer}>
-      <AppButton title="Scanning" size="sm" backgroundColor="#007bff" onPress={() => navigation.push('Camera')}/>
+   <View style={buttonStyles.screenContainer}>
+      <ImageBackground source={require("../assets/images/treeBg.jpg")} style={buttonStyles.image}>
+        <AppButton title="Scanning" size="sm" backgroundColor="#007bff" onPress={() => navigation.push('Camera')}/>
+      </ImageBackground>
     </View>
   )
 }
