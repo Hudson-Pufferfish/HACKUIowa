@@ -1,7 +1,7 @@
-import { ImageBackground, Button, View, Text, TouchableOpacity } from 'react-native';
+import { ImageBackground, Button, View, Text, TouchableOpacity, Alert } from 'react-native';
 import React from 'react';
 import { buttonStyles } from '../styles/button.styles';
-
+import { useDispatch, useSelector } from 'react-redux';
 TouchableOpacity.defaultProps = { activeOpacity: 0.8 };
 
 const AppButton = ({ onPress, title }) => (
@@ -11,12 +11,16 @@ const AppButton = ({ onPress, title }) => (
 );
 
 const ActionScreen = ( {navigation} ) => {
+  const { cartTotalAmount: totalCarbon } = useSelector(state => state.cart);
+  const calculateCarbon = parseInt(totalCarbon || 0) / 181437;
   return (
     <View style={buttonStyles.screenContainer}>
       <ImageBackground source={require("../assets/images/treeBg.jpg")} style={buttonStyles.image}>
-        <AppButton title="Calculate Carbon Offset" size="sm" backgroundColor="#007bff" />
+        <AppButton title="Calculate Carbon Offset" size="sm" backgroundColor="#007bff"
+          onPress={() => { Alert.alert("", ""+Number(calculateCarbon).toFixed(6)+" tree(s)")}}
+        />
       </ImageBackground>
-  </View>
+    </View>
   )
 }
 
