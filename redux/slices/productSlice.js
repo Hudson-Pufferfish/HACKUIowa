@@ -9,9 +9,9 @@ const product = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder.addCase(fetchProductInfo.fulfilled, (state, action) => {
-            if (action.payload && !state.includes(action.payload)) {
+            if (action.payload && !state.find(product => (product.barcode === action.payload.barcode))) {
                 state.push(action.payload);
-            }
+            } 
         })
         builder.addCase(fetchProductInfo.rejected, (state, action) => {
             alert("Product unavailable.");

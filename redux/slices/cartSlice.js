@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const initialState = {
   cartItems: [],
@@ -14,7 +15,6 @@ const cartSlice = createSlice({
       const existingIndex = state.cartItems.findIndex(
         (item) => item.id === action.payload.id
       );
-
       if (existingIndex >= 0) {
         state.cartItems[existingIndex] = {
           ...state.cartItems[existingIndex],
@@ -40,9 +40,7 @@ const cartSlice = createSlice({
         );
 
         state.cartItems = nextCartItems;
-
       }
-
       AsyncStorage.setItem("cartItems", JSON.stringify(state.cartItems));
     },
     removeFromCart(state, action) {
@@ -55,7 +53,6 @@ const cartSlice = createSlice({
           state.cartItems = nextCartItems;
         }
         AsyncStorage.setItem("cartItems", JSON.stringify(state.cartItems));
-        return state;
       });
     },
     getTotals(state, action) {
@@ -78,9 +75,9 @@ const cartSlice = createSlice({
       state.cartTotalQuantity = quantity;
       state.cartTotalAmount = total;
     },
-    clearCart(state, action) {
-      state.cartItems = [];
+    clearCart(state) {
       AsyncStorage.setItem("cartItems", JSON.stringify(state.cartItems));
+      // return [];
     },
   },
 });
