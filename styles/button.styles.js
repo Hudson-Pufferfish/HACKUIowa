@@ -12,7 +12,8 @@ export const buttonStyles = StyleSheet.create({
     backgroundColor: BUTTON_COLOR,
     borderRadius: 10,
     paddingVertical: 10,
-    paddingHorizontal: 12
+    paddingHorizontal: 12,
+    marginHorizontal: 20,
   },
   appButtonText: {
     paddingHorizontal: 80,
@@ -21,6 +22,15 @@ export const buttonStyles = StyleSheet.create({
     color: "#fff",
     fontWeight: "bold",
     alignSelf: "center",
-    textTransform: "uppercase"
-  }
+    textTransform: "uppercase",
+    textAlign : "center",
+    lineHeight : 25
+  },
+  image: {
+    flex: 1,
+    resizeMode: 'cover',
+    justifyContent: 'center',
+    width: '100%',
+    maxWidth: '100%',
+  },
 });

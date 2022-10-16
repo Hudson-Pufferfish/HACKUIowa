@@ -1,3 +1,37 @@
-# HACKUIowa
+# HACKUIowa Project - CarbonScanner
 
-<a href="https://jqn.medium.com/configure-eslint-for-react-native-d914679e122f" target="_blank">Used ESLint Config guide</a>
+This project was bootstrapped with [Create Expo App](https://github.com/expo/expo).
+
+## Available Scripts
+
+In the project directory, you can run:
+
+#### `npm install`
+
+Then:
+
+#### `npm install expo-cli --global`
+
+Finally, to run the application:
+#### `npx expo start`
+
+
+## Inspiration
+
+## What it does
+
+## How we built it
+React Native with create-expo-app
+Redux (Toolkit)
+Redux Thunk
+Expo Barcode Scanner
+React Native Navigation
+
+## Challenges we ran into
+
+## Accomplishments that we're proud of
+
+## What we learned
+
+## What's next for CarbonScanner
+

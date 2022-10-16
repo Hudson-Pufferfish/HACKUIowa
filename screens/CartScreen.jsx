@@ -1,4 +1,4 @@
-import { Button, View, Text, TouchableOpacity } from 'react-native';
+import { ImageBackground, Button, View, Text, TouchableOpacity } from 'react-native';
 import React from 'react';
 import { buttonStyles } from '../styles/button.styles';
 
@@ -12,9 +12,14 @@ const AppButton = ({ onPress, title }) => (
 
 const CartScreen = ({ navigation }) => {
   return (
-     <View style={buttonStyles.screenContainer}>
-       <AppButton title="View Item" size="sm" backgroundColor="#007bff" onPress={() => navigation.navigate('Item')}/>
-     </View>
+    <View style={buttonStyles.screenContainer}>
+      <ImageBackground source={require("../assets/images/treeBg.jpg")} style={buttonStyles.image}>
+        <AppButton title="Item 1" size="sm" backgroundColor="#007bff"/>
+        <AppButton title="Item 2" size="sm" backgroundColor="#007bff"/>
+        <AppButton title="Item 3" size="sm" backgroundColor="#007bff"/>
+        <AppButton title="Item 4" size="sm" backgroundColor="#007bff"/>
+      </ImageBackground>
+    </View>
    )
  }
 
