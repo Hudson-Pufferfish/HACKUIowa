@@ -51,7 +51,7 @@ export const fetchProductInfo = createAsyncThunk(
     'product/fetchByBarCode',
     (productBarCode, thunkAPIs) => {
         try {
-            const res = data.filter(prod => {
+            const res = data.find(prod => {
                 return prod.barcode == productBarCode
             });
             return res;
