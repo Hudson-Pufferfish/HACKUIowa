@@ -1,3 +1,4 @@
+import { NavigationHelpersContext } from '@react-navigation/core';
 import { createSlice } from '@reduxjs/toolkit'
 import { fetchProductInfo } from '../asyncThunk/productAsyncThunk'
 
@@ -8,7 +9,7 @@ const product = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder.addCase(fetchProductInfo.fulfilled, (state, action) => {
-            if (action.payload) {
+            if (action.payload && !state.includes(action.payload)) {
                 state.push(action.payload);
             }
         })

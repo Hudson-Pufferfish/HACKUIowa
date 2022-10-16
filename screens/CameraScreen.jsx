@@ -3,16 +3,22 @@ import { Button, StyleSheet, Text, View } from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
 import { fetchProductInfo } from '../redux/asyncThunk/productAsyncThunk';
 import { useDispatch, useSelector } from 'react-redux';
+import product from '../redux/asyncThunk/product';
+import render from 'react-native-web/dist/cjs/exports/render';
 
 const CameraScreen = ( {navigation} ) => {
   const dispatch = useDispatch();
   const [hasPermission, setHasPermission] = useState(null);
   const [scanned, setScanned] = useState(false);
   const productState = useSelector(state => state.product);
+  const [barcode, setBarcode] = useState('');
+  const [next, setNext] = useState(false);
 
   useEffect(() => {
-    console.log(JSON.stringify(productState));
-  }, [productState]);
+    if (next) {
+      navigation.navigate('Item', {barcode: barcode});
+    }
+  }, [productState, barcode]);
 
   useEffect(() => {
     const getBarCodeScannerPermissions = async () => {
@@ -25,8 +31,9 @@ const CameraScreen = ( {navigation} ) => {
 
   const handleBarCodeScanned = ({ type, data }) => {
     setScanned(true);
-    alert(`Bar code with type ${type} and data ${data} has been scanned!`);
+    setBarcode(data);
     dispatch(fetchProductInfo(data));
+    setNext(true);
   };
 
   if (hasPermission === null) {
