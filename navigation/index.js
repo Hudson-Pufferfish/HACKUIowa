@@ -1,5 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import {
     HomeScreen,
     CameraScreen,
@@ -7,6 +8,7 @@ import {
     CartScreen,
     ActionScreen,
 } from '../screens';
+import { BUTTON_COLOR } from '../constants/color.constants.js';
 
 const HomeStack = createNativeStackNavigator();
 const CartStack = createNativeStackNavigator();
@@ -35,10 +37,37 @@ function CartStackScreen () {
 
 const AppNavigation = () => {
     return (
-      <BottomTabBar.Navigator screenOptions={{ headerShown: false }}>
-        <BottomTabBar.Screen name="Home" component={HomeStackScreen} />
-        <BottomTabBar.Screen name="Cart" component={CartStackScreen} />
-        <BottomTabBar.Screen name="Action" component={ActionScreen} />
+      <BottomTabBar.Navigator initialRouteName="Home" screenOptions={{ headerShown: false, tabBarActiveTintColor: BUTTON_COLOR }}>
+        <BottomTabBar.Screen 
+            name="HomeTab" 
+            component={HomeStackScreen} 
+            options={{
+                    tabBarLabel: "Home",
+                    tabBarIcon: ({ color, size }) => (
+                        <MaterialCommunityIcons name = "home" color={color} size={size} />
+                    ),
+            }}
+        />
+        <BottomTabBar.Screen
+            name="CartTab" 
+            component={CartStackScreen}
+            options={{
+                    tabBarLabel: "Cart",
+                    tabBarIcon: ({ color, size }) => (
+                        <MaterialCommunityIcons name = "cart" color={color} size={size} />
+                    ),
+            }}
+        />
+        <BottomTabBar.Screen 
+            name="ActionTab" 
+            component={ActionScreen} 
+            options={{
+                    tabBarLabel: "Action",
+                    tabBarIcon: ({ color, size }) => (
+                        <MaterialCommunityIcons name = "tree" color={color} size={size} />
+                    ),
+            }}
+        />
       </BottomTabBar.Navigator>
     )
 }

@@ -4,7 +4,7 @@ import cartReducer from "./slices/cartSlice";
 import productReducer from "./slices/productSlice"
 // AsyncStorage replace of local storage
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { persistReducer, persistStore } from 'redux-persist';
+import { FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER, persistReducer, persistStore } from 'redux-persist';
 
 
 const rootReducer = combineReducers({
@@ -20,6 +20,13 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const store = configureStore({
   reducer: persistedReducer,
+  middleware: (defaultMiddleware) =>
+    defaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+      immutableCheck: { warnAfter: 128 },
+    }),
 })
 const persistor = persistStore(store)
 

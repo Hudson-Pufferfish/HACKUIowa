@@ -1,10 +1,19 @@
-import { Button, View, Text } from 'react-native'
-import React from 'react'
+import { Button, View, Text, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { buttonStyles } from '../styles/button.styles';
+
+TouchableOpacity.defaultProps = { activeOpacity: 0.8 };
+
+const AppButton = ({ onPress, title }) => (
+  <TouchableOpacity onPress={onPress} style={buttonStyles.appButtonContainer}>
+    <Text style={buttonStyles.appButtonText}>{title}</Text>
+  </TouchableOpacity>
+);
 
 const ActionScreen = ( {navigation} ) => {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Action Screen</Text>
+    <View style={buttonStyles.screenContainer}>
+      <AppButton title="Action Screen" size="sm" backgroundColor="#007bff" />
   </View>
   )
 }
